@@ -1,0 +1,52 @@
+html {
+  background-image: linear-gradient(
+    180deg,
+    rgb(168, 145, 234),
+    rgb(142, 165, 251)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 40%;
+  height: 20rem;
+  margin-top: 10em;
+  border-radius: 0.5rem;
+  box-shadow: 3px 6px 10px rgba(1, 1, 1, 0.15);
+}
+
+h1 {
+  font-weight: 100;
+}
+
+input {
+  text-align: center;
+}
+
+p {
+  height: 1em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
