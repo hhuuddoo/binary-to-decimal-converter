@@ -37,8 +37,9 @@ function App() {
             placeholder="Enter Binary Number"
             type="number"
             value={binary}
+            autoFocus={true}
             onChange={({ target }) => setBinary(target.value)}
-            maxLength="40"
+            maxLength="16"
           />
           {binary ? (
             error ? (
