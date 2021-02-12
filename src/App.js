@@ -12,12 +12,18 @@ import React, { useEffect, useState } from "react";
 function App() {
   const [binary, setBinary] = useState("");
   const [decimal, setDecimal] = useState(0);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     setDecimal(0);
+    setError(false);
     for (let i = 0; i < binary.length; i++) {
       setDecimal((prev) => {
-        return prev + parseInt(binary[i]) * 2 ** (binary.length - i - 1);
+        if (binary[i] === "0" || binary[i] === "1") {
+          return prev + parseInt(binary[i]) * 2 ** (binary.length - i - 1);
+        }
+        setError(true);
+        return;
       });
     }
   }, [binary]);
@@ -34,7 +40,15 @@ function App() {
             onChange={({ target }) => setBinary(target.value)}
             maxLength="40"
           />
-          <p>{binary && decimal}</p>
+          {binary ? (
+            error ? (
+              <p style={{ color: "red" }}>Invalid Input</p>
+            ) : (
+              <p>{decimal}</p>
+            )
+          ) : (
+            <p></p>
+          )}
         </div>
       </div>
     </>
